@@ -18,7 +18,8 @@ const DEFAULT_CONFIG = {
 
   // EmailJS Configuration
   emailjsServiceId: (typeof import.meta !== 'undefined' && import.meta.env?.VITE_EMAILJS_SERVICE_ID) || '',
-  emailjsTemplateId: (typeof import.meta !== 'undefined' && import.meta.env?.VITE_EMAILJS_TEMPLATE_ID) || '',
+  emailjsTemplateId: (typeof import.meta !== 'undefined' && (import.meta.env?.VITE_EMAILJS_QUOTE_TEMPLATE_ID || import.meta.env?.VITE_EMAILJS_TEMPLATE_ID)) || '',
+  emailjsConfirmationTemplateId: (typeof import.meta !== 'undefined' && (import.meta.env?.VITE_EMAILJS_CONFIRMATION_TEMPLATE_ID || import.meta.env?.VITE_EMAILJS_RECEIPT_TEMPLATE_ID)) || '',
   emailjsPublicKey: (typeof import.meta !== 'undefined' && import.meta.env?.VITE_EMAILJS_PUBLIC_KEY) || '',
   emailjsEnabled: true,
 };

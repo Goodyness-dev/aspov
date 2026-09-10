@@ -23,6 +23,7 @@ export default function AdminSettingsModal({ isOpen, onClose }) {
   // EmailJS fields
   const [emailjsServiceId, setEmailjsServiceId] = useState(initial.emailjsServiceId || '');
   const [emailjsTemplateId, setEmailjsTemplateId] = useState(initial.emailjsTemplateId || '');
+  const [emailjsConfirmationTemplateId, setEmailjsConfirmationTemplateId] = useState(initial.emailjsConfirmationTemplateId || '');
   const [emailjsPublicKey, setEmailjsPublicKey] = useState(initial.emailjsPublicKey || '');
   const [testEmailRecipient, setTestEmailRecipient] = useState('');
   const [testingEmail, setTestingEmail] = useState(false);
@@ -42,6 +43,7 @@ export default function AdminSettingsModal({ isOpen, onClose }) {
       telegramChatId: telegramChatId.trim(),
       emailjsServiceId: emailjsServiceId.trim(),
       emailjsTemplateId: emailjsTemplateId.trim(),
+      emailjsConfirmationTemplateId: emailjsConfirmationTemplateId.trim(),
       emailjsPublicKey: emailjsPublicKey.trim(),
       adminPassword: adminPassword.trim() || 'aspen2005',
     });
@@ -256,29 +258,46 @@ export default function AdminSettingsModal({ isOpen, onClose }) {
 
                 <div>
                   <label className="block text-xs font-bold text-mist-800 uppercase tracking-wider mb-2">
-                    Template ID
+                    Public Key (User ID)
                   </label>
                   <input
                     type="text"
-                    value={emailjsTemplateId}
-                    onChange={(e) => setEmailjsTemplateId(e.target.value)}
-                    placeholder="e.g. template_xxxxxxx"
+                    value={emailjsPublicKey}
+                    onChange={(e) => setEmailjsPublicKey(e.target.value)}
+                    placeholder="e.g. xxxxxxxxxxxxxxxx"
                     className="w-full px-4 py-3 rounded-2xl bg-mist-50 border border-mist-200 text-mist-950 placeholder-mist-400 focus:ring-2 focus:ring-mist-950 focus:bg-white text-sm font-mono"
                   />
                 </div>
               </div>
 
-              <div>
-                <label className="block text-xs font-bold text-mist-800 uppercase tracking-wider mb-2">
-                  Public Key (User ID)
-                </label>
-                <input
-                  type="text"
-                  value={emailjsPublicKey}
-                  onChange={(e) => setEmailjsPublicKey(e.target.value)}
-                  placeholder="e.g. xxxxxxxxxxxxxxxx"
-                  className="w-full px-4 py-3 rounded-2xl bg-mist-50 border border-mist-200 text-mist-950 placeholder-mist-400 focus:ring-2 focus:ring-mist-950 focus:bg-white text-sm font-mono"
-                />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-xs font-bold text-mist-800 uppercase tracking-wider mb-1">
+                    Template 1: Quote Reply ID
+                  </label>
+                  <p className="text-[11px] text-mist-500 mb-2">Sent when replying to customer with quote</p>
+                  <input
+                    type="text"
+                    value={emailjsTemplateId}
+                    onChange={(e) => setEmailjsTemplateId(e.target.value)}
+                    placeholder="e.g. template_quote..."
+                    className="w-full px-4 py-3 rounded-2xl bg-mist-50 border border-mist-200 text-mist-950 placeholder-mist-400 focus:ring-2 focus:ring-mist-950 focus:bg-white text-sm font-mono"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-bold text-mist-800 uppercase tracking-wider mb-1">
+                    Template 2: Customer Receipt ID
+                  </label>
+                  <p className="text-[11px] text-mist-500 mb-2">Sent automatically on wizard submit</p>
+                  <input
+                    type="text"
+                    value={emailjsConfirmationTemplateId}
+                    onChange={(e) => setEmailjsConfirmationTemplateId(e.target.value)}
+                    placeholder="e.g. template_receipt..."
+                    className="w-full px-4 py-3 rounded-2xl bg-mist-50 border border-mist-200 text-mist-950 placeholder-mist-400 focus:ring-2 focus:ring-mist-950 focus:bg-white text-sm font-mono"
+                  />
+                </div>
               </div>
 
               <div className="pt-2 border-t border-mist-100">

@@ -1,4 +1,5 @@
 import { sendTelegramOrderNotification } from './telegramService.js';
+import { sendOrderConfirmationEmail } from './emailService.js';
 
 const STORAGE_KEY = 'aspen_drain_quotes';
 
@@ -174,6 +175,11 @@ export async function submitQuoteRequest(orderData) {
   // 🔔 Dispatch Telegram notification to owner in background
   sendTelegramOrderNotification(formattedOrder).catch(err => {
     console.warn('Telegram notification background dispatch error:', err);
+  });
+
+  // ✉️ Dispatch confirmation receipt email to customer in background
+  sendOrderConfirmationEmail(formattedOrder).catch(err => {
+    console.warn('Email confirmation background dispatch error:', err);
   });
 
   // Short delay for optimal UX feedback
