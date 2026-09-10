@@ -9,9 +9,9 @@ const iconMap = {
 };
 
 const imageMap = {
-  repair: '/msalguero-faucet-943297.jpg',
-  installation: '/interiorlens-faucet-8372443.jpg',
-  inspection: '/timur-shakerzianov-wzIjLL4KB-4-unsplash.jpg',
+  repair: '/real-pipe-repair.jpg',
+  installation: '/real-drain-install.jpg',
+  inspection: '/real-plumbing-inspection.jpg',
 };
 
 export default function Services({ onSelectService }) {
