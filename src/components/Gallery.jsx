@@ -4,9 +4,9 @@ import { ExternalLink } from 'lucide-react';
 const JOBS = [
   { id: 1, title: 'Main Drain Snaking', category: 'Drain Cleaning', tag: 'Drain Specialist', image: '/image.jpg' },
   { id: 2, title: 'Sump Pump Replacement', category: 'Installation', tag: 'Flood Prevention', image: '/img 2.jpg' },
-  { id: 3, title: 'Copper Pipe Repair', category: 'Emergency Repair', tag: 'Emergency Fix', image: '/marian-florinel-condruz-C-oYJoIfgCs-unsplash.jpg' },
+  { id: 3, title: 'Copper Pipe Repair', category: 'Emergency Repair', tag: 'Emergency Fix', image: '/real-shower-roughin.jpg' },
   { id: 4, title: 'Kitchen Sink Install', category: 'Installation', tag: 'Kitchen Plumbing', image: '/rose-galloway-green-MzPnzK3prTU-unsplash.jpg' },
-  { id: 5, title: 'Toilet Installation', category: 'Fixture Replacement', tag: 'Water Saving', image: '/azka-rayhansyah-DByY8MbE9OE-unsplash.jpg' },
+  { id: 5, title: 'Toilet Installation', category: 'Fixture Replacement', tag: 'Water Saving', image: '/toilet-installation.jpg' },
   { id: 6, title: 'Sewer Camera Inspection', category: 'Inspection', tag: 'Diagnostic', image: '/jackmac34-plumbing-2489860.jpg' },
 ];
 

@@ -12,7 +12,7 @@ export default function About({ onOpenWizard }) {
           <div className="relative">
             <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl shadow-mist-900/15 ring-1 ring-white/20">
               <img
-                src="/jianlili-bathroom-3272780.jpg"
+                src="/interiorlens-faucet-8372443.jpg"
                 alt="Premium bathroom with elegant fixtures"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
               />
